@@ -1,3 +1,4 @@
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cqeta1564)
 # Tutorial
 Tutorial can be found [here](https://github.com/Fail-Fast-V0/klipper-prusa-mk3s).
 # Config based on
