@@ -88,3 +88,8 @@ Doporučuji se kouknout i na tyto věci:
   4) Resonance Compensation: https://www.klipper3d.org/Resonance_Compensation.html
 
 Tisku zdar!
+
+# ToDo
+- [ ] Recalibrate homing speed and sensitivity
+- [ ] Calibrate PA for PETG
+- [ ] Finish config for PrusaSlicer
