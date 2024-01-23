@@ -1,15 +1,15 @@
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cqeta1564)
 # Basic info
-This project transforms original prusa i3 MK3S+ to printer running klipper. The user interface is mainsail. This mod is safe unless you play with the config. This mod is also not permanent. More info at **how to get back**.
+This project transforms original prusa i3 MK3S+ to printer running klipper. The user interface is Mainsail. This mod is safe unless you play with the config. This mod is also not permanent. More info at [how to get back](https://github.com/cqeta1564/klipperrized-prusa/edit/new-readme/README.md#how-to-get-back-to-original-firmware).
 
 What you will get from doing this modification to your printer. Faster prints, better quality and quieter operations.
 
 # Tutorial
 
 ## Hardware needed
-- The best option is to use a Raspberry Pi Zero (2W preferred) but if you prefer Raspberry Pi 2/3/4 can also be used with a bit more work and a few more wires
+- The best option is to use a Raspberry Pi Zero (2W preferred) but if you prefer Raspberry Pi 2/3/4/5 can also be used with a bit more work and a few more wires
 - If using Raspberry Pi Zero you'll need [male headers](https://amzn.to/3XND883) so can mount directly to einsy board
-- Micro-usb to usb-b (printer cable) or a micro-usb adapter if you already have a usb-b cable
+- Micro-USB to USB-B (printer cable) or a micro-USB adapter if you already have a USB-B cable
 
 ## Pre-Check
 - Get Z offset value from your current firmware (Menu -> Calibration -> Z-offset)
@@ -50,7 +50,7 @@ What you will get from doing this modification to your printer. Faster prints, b
 11. In the "Machine" tab, upload "printer.cfg" from my GitHub
 
 ## Flashing Einsy and Setting up Communications between Rpi and Einsy
-1. Power down your Pi in mainsail. If your Pi is plugged into your printer power that down too and remove the Pi. Connect the a USB power source to the micro-usb port on the furthest edge of the board labeled "PWR IN". Plug your micro-usb to usb-b cable in the center micro-usb port labeled "USB" and then plug the other end into your Einsy mainboard. Turn your printer on if it isn't already. 
+1. Power down your Pi in mainsail. If your Pi is plugged into your printer power that down too and remove the Pi. Connect the a USB power source to the micro-USB port on the furthest edge of the board labeled "PWR IN". Plug your micro-USB to USB-b cable in the center micro-USB port labeled "USB" and then plug the other end into your Einsy mainboard. Turn your printer on if it isn't already. 
 
 2. To flash klipper onto your einsy
 
@@ -68,7 +68,7 @@ What you will get from doing this modification to your printer. Faster prints, b
    make
    ```
 
-   b. find the port for the usb cable
+   b. find the port for the USB cable
 
    ```yml
    ls /dev/serial/by-id/*
