@@ -55,29 +55,29 @@ What you will get from doing this modification to your printer. Faster prints, b
 
 2. To flash Klipper onto your Einsy
 
-   a. Download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and connect to your Pi. Enter the following commands  
+a. Download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and connect to your Pi. Enter the following commands  
 
    ```yml
    cd ~/klipper/
    make menuconfig   
    ```
    
-   Compile the firmware for "AVR" "atmega2560". To connect your Pi Zero over serial, select "Enable extra low-level configuration options" and select **UART1** (the RasPi serial) or **UART0** when you plan to connect via the USB.
+Compile the firmware for "AVR" "atmega2560". To connect your Pi Zero over serial, select "Enable extra low-level configuration options" and select **UART1** (the RasPi serial) or **UART0** when you plan to connect via the USB.
    Press "q" and exit
 
    ```yml
    make
    ```
 
-   b. find the port for the USB cable
+b. find the port for the USB cable
 
    ```yml
    ls /dev/serial/by-id/*
    ```
 
-   Putty will return something like "/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0" or "/dev/serial/by-id/usb-Prusa_Research__prusa3d.com__Original_Prusa_i3_MK3_CZPX4820X004XK35533-if00"
+Putty will return something like "/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0" or "/dev/serial/by-id/usb-Prusa_Research__prusa3d.com__Original_Prusa_i3_MK3_CZPX4820X004XK35533-if00"
 	
-   Copy this line and replace the corresponding line in the code below. Then run those commands in Putty
+Copy this line and replace the corresponding line in the code below. Then run those commands in Putty
 	
    ```yml
    sudo service klipper stop
@@ -87,7 +87,7 @@ What you will get from doing this modification to your printer. Faster prints, b
 
 3. Restart the printer by turning the power supply off and on againg
    
-4. Print
+4. Ready to print
 
 ## Optional things that are nice to have
 - [Klipper mesh on the print area only install guide](https://gist.github.com/ChipCE/95fdbd3c2f3a064397f9610f915f7d02)
