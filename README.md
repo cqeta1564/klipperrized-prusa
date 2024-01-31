@@ -90,8 +90,13 @@ Copy this line and replace the corresponding line in the code below. Then run th
 4. Ready to print
 
 ## Optional things that are nice to have
-- [Klipper mesh on the print area only install guide](https://gist.github.com/ChipCE/95fdbd3c2f3a064397f9610f915f7d02)
-- [Recalibrating input shaper](https://www.klipper3d.org/Resonance_Compensation.html) just for your printer using [ADXl345](https://amzn.to/3XMmTZa) 
+
+### Klipper mesh on the print area only
+Just download my Prusa 
+
+
+### Recalibrating input shaper
+More info is comming. In the meantime, here is oficial klipper guide: [Recalibrating input shaper](https://www.klipper3d.org/Resonance_Compensation.html) just for your printer using [ADXl345](https://amzn.to/3XMmTZa)
 
 
 ## How to get back to the original firmware
@@ -100,3 +105,4 @@ Just reflash the Einsy with the original firmware using PrusaSlicer, just like y
 ## Sources
 - Tutorial: https://github.com/Fail-Fast-V0/klipper-prusa-mk3s/
 - The file from which my configuration is based on: https://github.com/tillin9/klipper/blob/patch-2/config/printer-prusa-mk3s-2021.cfg
+- Klipper mesh on the print area only install guide: https://gist.github.com/ChipCE/95fdbd3c2f3a064397f9610f915f7d02 
