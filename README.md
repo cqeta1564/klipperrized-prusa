@@ -1,6 +1,6 @@
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cqeta1564)
 # Basic info
-This project transforms the original Prusa i3 MK3S+ into a printer running Klipper. The user interface is Mainsail. This mod is safe unless you play with the config. This mod is also not permanent. More information on [how to get back](https://github.com/cqeta1564/klipperrized-prusa/edit/new-readme/README.md#how-to-get-back-to-original-firmware).
+This project transforms the original Prusa i3 MK3S+ into a printer running Klipper. The user interface is Mainsail. This mod is safe unless you play with the config. This mod is also not permanent. More information on [how to get back](https://github.com/cqeta1564/klipperrized-prusa/blob/CZ-ReadMe/README.md#how-to-get-back-to-the-original-firmware).
 
 What you will get from doing this modification to your printer. Faster prints, better quality, and quieter operations.
 
