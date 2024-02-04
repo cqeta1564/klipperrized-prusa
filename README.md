@@ -92,7 +92,7 @@ Copy this line and replace the corresponding line in the code below. Then run th
 ## Optional things that are nice to have
 
 ### Klipper mesh on the print area only
-Just download my Prusa 
+Just download my PrusaSlicer configuration package and use the provided printer profile to use this feature. The Klipper configuration is already set up with this feature.
 
 
 ### Recalibrating input shaper
