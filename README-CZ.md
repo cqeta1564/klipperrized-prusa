@@ -1,6 +1,6 @@
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cqeta1564)
 # Základní informace
-Tento projekt přeměňuje původní tiskárnu Prusa i3 MK3S+ na tiskárnu se systémem Klipper. Uživatelské rozhraní je Mainsail. Tato modifikace je bezpečná, pokud si nebudete hrát s konfigurací. Tato modifikace také není trvalá. Více informací najdete na stránce [jak se dostat zpět](https://github.com/cqeta1564/klipperrized-prusa/blob/main/README-CZ.md#jak-se-vratit-k-puvodnimu-firmwaru).
+Tento projekt přeměňuje původní tiskárnu Prusa i3 MK3S+ na tiskárnu se systémem Klipper. Uživatelské rozhraní je Mainsail. Tato modifikace je bezpečná, pokud si nebudete hrát s konfigurací. Tato modifikace také není trvalá. Více informací najdete na stránce [jak se dostat zpět](https://github.com/cqeta1564/klipperrized-prusa/blob/main/README-CZ.md#jak-se-vrátit-k-původnímu-firmwaru).
 
 Co touto úpravou tiskárny získáte. Rychlejší výtisky, lepší kvalitu a tišší provoz.
 
