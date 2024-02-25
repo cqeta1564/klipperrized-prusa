@@ -105,4 +105,5 @@ Just reflash the Einsy with the original firmware using PrusaSlicer, just like y
 ## Sources
 - Tutorial: https://github.com/Fail-Fast-V0/klipper-prusa-mk3s/
 - The file from which my configuration is based on: https://github.com/tillin9/klipper/blob/patch-2/config/printer-prusa-mk3s-2021.cfg
+- Another good configuration: https://lab4450.com/latest-projects/revive-your-prusa-mk3s-with-klipper-2-5-compile-and-flash-klipper/
 - Klipper mesh on the print area only install guide: https://gist.github.com/ChipCE/95fdbd3c2f3a064397f9610f915f7d02 
