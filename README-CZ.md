@@ -105,4 +105,5 @@ Stačí přeflashovat Einsy původním firmwarem pomocí PrusaSlicer, stejně ja
 ## Zdroje
 - Výukový kurz: https://github.com/Fail-Fast-V0/klipper-prusa-mk3s/
 - Soubor, ze kterého vychází moje konfigurace: https://github.com/tillin9/klipper/blob/patch-2/config/printer-prusa-mk3s-2021.cfg
+- Další dobrá konfigurace: https://lab4450.com/latest-projects/revive-your-prusa-mk3s-with-klipper-2-5-compile-and-flash-klipper/
 - Síťka Klipper pouze v oblasti tisku Návod k instalaci: https://gist.github.com/ChipCE/95fdbd3c2f3a064397f9610f915f7d02
