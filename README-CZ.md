@@ -89,6 +89,97 @@ Zkopírujte tento řádek a nahraďte jím odpovídající řádek v níže uved
    
 4. Připraveno k tisku
 
+
+## Jak používat profily PrusaSlicer
+Můžete si stáhnout balíček profile.ini, ale počítejte s tím, že nebude aktuální s nejnovější konfigurací PrusaSliceru. Můžete si také nakonfigurovat vlastní profil podle tohoto návodu níže:
+
+Použijte profil Original Prusa MK3.5 Input Shaper s vypnutým "Nastavení tisku" > "Pokročilé" > "Přizpůsobení obloukem" a nastavte "G-code rozlišení" na 0.006. V "Nastavení tiskárny" > "Obecné" nastavte "Druh G-code" na "Klipper" a "Náhledy G-codu" na "64x64/PNG, 400x300/PNG" a vypněte "Podpora binárního G-code". V části "Vlastní G-code" nastavte "Začátek G-code" na tuto hodnotu: 
+```yml
+G90 ; use absolute coordinates
+M83 ; extruder relative mode
+
+M140 S[first_layer_bed_temperature] ; set bed temp
+M104 S170 ; set extruder temp for bed leveling
+M109 S170 ; wait for temp
+M190 S[first_layer_bed_temperature] ; wait for bed temp
+
+G28 ; home all
+
+BED_MESH_CALIBRATE AREA_START={first_layer_print_min[0]},{first_layer_print_min[1]} AREA_END={first_layer_print_max[0]},{first_layer_print_max[1]}
+
+; prepare for purge
+M104 S{first_layer_temperature[0]}
+G0 X0 Y-4 Z15 F4800 ; move away and ready for the purge
+M109 S{first_layer_temperature[0]}
+
+; Extrude purge line
+
+G92 E0 ; reset extruder position
+G0 E7 X15 Z0.2 F500 ; purge
+G0 X25 E4 F500 ; purge
+G0 X35 E4 F650 ; purge
+G0 X45 E4 F800 ; purge
+G0 X{45 + 3} Z0.05 F8000 ; wipe, move close to the bed
+G0 X{45 + 3 * 2} Z0.2 F8000 ; wipe, move quickly away from the bed
+
+G92 E0
+M221 S100 ; reset flow to 100%
+```
+
+A "Konec G-code" na tuto:
+```yml
+{if layer_z < max_print_height}G1 Z{z_offset+min(layer_z+1, max_print_height)} F720 ; Move print head up{endif}
+M104 S0 ; turn off temperature
+M140 S0 ; turn off heatbed
+M107 ; turn off fan
+G1 X241 Y201 F3600 ; park
+{if layer_z < max_print_height}G1 Z{z_offset+min(layer_z+23, max_print_height)} F300 ; Move print head up{endif}
+G4 ; wait
+M572 S0 ; reset PA
+M84 X Y E ; disable motors
+; max_layer_z = [max_layer_z]
+```
+
+A "G-code před změnou vrstvy" na toto:
+```yml
+;BEFORE_LAYER_CHANGE
+G92 E0.0
+;[layer_z]
+M201 X{interpolate_table(extruded_weight_total, (0,4000), (1400,2500), (10000,2500))} Y{interpolate_table(extruded_weight_total, (0,4000), (1400,2500), (10000,2500))}
+```
+
+To je vše pro rychlý profil mk3.5 nebo můžete použít jen pomalý a starý profil pro Original Prusa i3 MK3S & MK3S+ s těmito úpravami:
+
+V "Nastavení tiskárny" > "Obecné" nastavte "Druh G-code" na "Klipper" a "Náhledy G-codu" na "64x64/PNG, 400x300/PNG". V části "Vlastní G-code" nastavte "Začátek G-code" na tuto hodnotu: 
+```yml
+G90 ; use absolute coordinates
+M83 ; extruder relative mode
+M140 S[first_layer_bed_temperature] ; set bed temp
+M190 S[first_layer_bed_temperature] ; wait for bed temp
+G28 W ; home all without mesh bed level
+BED_MESH_CALIBRATE AREA_START={first_layer_print_min[0]},{first_layer_print_min[1]} AREA_END={first_layer_print_max[0]},{first_layer_print_max[1]}
+{if filament_settings_id[initial_tool]=~/.*Prusament PA11.*/}
+G1 Z0.3 F720
+G1 Y-3 F1000 ; go outside print area
+M104 S[first_layer_temperature] ; set extruder temp
+M109 S[first_layer_temperature] ; wait for extruder temp
+G92 E0
+G1 X60 E9 F1000 ; intro line
+G1 X100 E9 F1000 ; intro line
+{else}
+G1 Z0.2 F720
+G1 Y-3 F1000 ; go outside print area
+M104 S[first_layer_temperature] ; set extruder temp
+M109 S[first_layer_temperature] ; wait for extruder temp
+G92 E0
+G1 X60 E9 F1000 ; intro line
+G1 X100 E12.5 F1000 ; intro line
+{endif}
+G92 E0
+M221 S{if layer_height<0.075}100{else}95{endif}
+```
+
+
 ## Nepovinné věci, které je dobré mít
 
 ### Klipper mesh pouze v oblasti tisku
